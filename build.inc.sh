@@ -1,4 +1,4 @@
-source .set-square/build.inc.sh
+echo "XXXXXX"
 defineEnvVar PKG_INSTALL \
              "The command to install packages" \
              "apk add";
@@ -8,4 +8,5 @@ defineEnvVar PKGS_UPDATE \
 defineEnvVar PKGS_CLEANUP \
              "The command to clean up local caches" \
              "echo 'skipped'";
+overrideEnvVar SETSQUARE_FLAVOR "alpine";
 #

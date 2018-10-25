@@ -4,7 +4,7 @@ ENV IVY_HOME /cache \
     GRADLE_VERSION 2.12 \
     GRADLE_HOME /usr/local/gradle \
     PATH ${PATH}:${GRADLE_HOME}/bin \
-    GRADLE_USER_HOME /gradle \
+    GRADLE_USER_HOME /gradle
 
 RUN cd /usr/local && \
     wget  https://services.gradle.org/distributions/gradle-$GRADLE_VERSION-bin.zip && \
