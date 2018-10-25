@@ -60,7 +60,11 @@ LICENSE.*
 */runme
 **/ssh-files
 */syslog-files
+.templates/copy-metadata
+.templates/gradle
 .templates/install
+.templates/instructions
+.templates/java
 .templates/maintainer
 .templates/preamble
 */tomcat-files
