@@ -1,0 +1,19 @@
+# v common
+ENV TERM="linux" \
+    PATH="${PATH}:/usr/local/bin"
+
+COPY common-files/dry-wit \
+     common-files/process-file.sh \
+     common-files/data \
+     common-files/copy.sh \
+     common-files/run-as.sh \
+     common-files/run-as.inc.sh \
+     common-files/restart.sh \
+     common-files/envvar.sh \
+     /usr/local/bin/
+
+RUN chmod +x /usr/local/bin/*.sh && \
+    mkdir /Dockerfiles && \
+    cd /bin && rm -f /bin/sh && ln -s /bin/bash sh
+
+# ^ common

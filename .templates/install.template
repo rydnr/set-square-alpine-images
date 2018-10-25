@@ -1,0 +1,11 @@
+# v install
+COPY install-files/pkg-install.sh \
+     install-files/pkg-install.inc.sh \
+     install-files/pkgs-cleanup.sh \
+     install-files/pkgs-cleanup.inc.sh \
+     /usr/local/bin/
+
+RUN chmod +x ${PKG_INSTALL} ${PKGS_CLEANUP} && \
+    mkdir -p /var/local/ && \
+    touch /var/local/docker-installed-packages.txt
+# ^ install

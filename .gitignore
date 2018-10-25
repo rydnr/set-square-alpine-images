@@ -60,5 +60,8 @@ LICENSE.*
 */runme
 **/ssh-files
 */syslog-files
+.templates/install
+.templates/maintainer
+.templates/preamble
 */tomcat-files
 */volumes-files/*
