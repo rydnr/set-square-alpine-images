@@ -1,0 +1,2 @@
+defineEnvVar CURL_VERSION "The curl version" "7.50.1";
+#

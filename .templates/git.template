@@ -1,0 +1,5 @@
+# v git
+RUN apk update && apk add git && \
+    rm -rf /var/cache/apk/* && \
+    rm -rf /usr/share/man
+# ^ git

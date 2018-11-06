@@ -1,0 +1,9 @@
+# v pharo6
+ENV PATH=${PATH}:/opt/pharo
+
+RUN apk add --update freetype libx11 mesa-gl && \
+    mkdir -p /opt/pharo && cd /opt/pharo && \
+    wget -O- https://get.pharo.org/64 | bash && \
+    rm -rf /var/cache/apk/* && \
+    rm -rf /usr/share/man
+# ^ pharo6

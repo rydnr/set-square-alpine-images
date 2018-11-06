@@ -14,6 +14,10 @@ COPY common-files/dry-wit \
 
 RUN chmod +x /usr/local/bin/*.sh && \
     mkdir /Dockerfiles && \
-    cd /bin && rm -f /bin/sh && ln -s /bin/bash sh
-
+    apk add --update bash ca-certificates wget shadow libarchive-tools && \
+    cd /lib && for f in /usr/glibc-compat/lib/*; do ln -sf ${f} .; done && \
+    rm -f /bin/sh && cp /bin/bash /bin/sh && \
+   rm -rf /var/cache/apk/* && \
+   rm -rf /usr/share/man
 # ^ common
+

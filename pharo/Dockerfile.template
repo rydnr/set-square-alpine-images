@@ -2,15 +2,11 @@
 FROM ${BASE_IMAGE}:${PARENT_IMAGE_TAG}
 @include("maintainer")
 
-@include("java")
 @include("git")
-@include("gradle")
 @include("service_user")
 @include("pharo6")
 
-ENV WORKSPACE="${WORKSPACE}" \
-    GRADLE_USER_HOME="${WORKSPACE}/.gradle" \
-    DOCKER_API_VERSION="${DEFAULT_DOCKER_API_VERSION}"
+ENV WORKSPACE="${WORKSPACE}"
 
 RUN gpasswd -a ${SERVICE_USER} root && \
     mkdir -p ${WORKSPACE} && \
@@ -25,4 +21,3 @@ RUN gpasswd -a ${SERVICE_USER} root && \
 WORKDIR ${WORKSPACE}
 ENTRYPOINT /bin/bash
 #
-

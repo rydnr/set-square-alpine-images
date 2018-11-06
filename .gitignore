@@ -61,11 +61,15 @@ LICENSE.*
 **/ssh-files
 */syslog-files
 .templates/copy-metadata
+.templates/curl-gnutls
+.templates/git
 .templates/gradle
 .templates/install
 .templates/instructions
 .templates/java
 .templates/maintainer
+.templates/pharo6
 .templates/preamble
+.templates/service_user
 */tomcat-files
 */volumes-files/*

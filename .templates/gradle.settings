@@ -1,0 +1,3 @@
+overrideEnvVar GRADLE_HOME "/usr/local/gradle" "The Gradle home";
+defineEnvVar GRADLE_VERSION "The Gradle version" '4.10.2';
+#

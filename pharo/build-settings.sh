@@ -1,5 +1,5 @@
 defineEnvVar PARENT_IMAGE_TAG "The tag of the parent image" "alpine-3.8_glibc-2.27";
-defineEnvVar TAG "The tag" '${GRADLE_VERSION}-${PHARO6_VERSION}-root';
+defineEnvVar TAG "The tag" '${PHARO6_VERSION}-root';
 defineEnvVar SERVICE_USER "The service user" "pharo";
 defineEnvVar SERVICE_USER_PASSWORD "The service user password" '${RANDOM_PASSWORD}';
 defineEnvVar SERVICE_GROUP "The service group" "pharo";

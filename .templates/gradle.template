@@ -1,16 +1,16 @@
 # v gradle
+ENV IVY_HOME=/cache \
+    GRADLE_HOME=${GRADLE_HOME} \
+    PATH=${PATH}:${GRADLE_HOME}/bin \
+    GRADLE_USER_HOME=${SERVICE_USER_HOME}
 
-ENV IVY_HOME /cache \
-    GRADLE_VERSION 2.12 \
-    GRADLE_HOME /usr/local/gradle \
-    PATH ${PATH}:${GRADLE_HOME}/bin \
-    GRADLE_USER_HOME /gradle
-
-RUN cd /usr/local && \
-    wget  https://services.gradle.org/distributions/gradle-$GRADLE_VERSION-bin.zip && \
-    unzip gradle-$GRADLE_VERSION-bin.zip && \
-    rm -f gradle-$GRADLE_VERSION-bin.zip && \
-    ln -s gradle-$GRADLE_VERSION gradle && \
-    echo -ne "- with Gradle $GRADLE_VERSION\n" >> /root/.built && \
-    apk update && apk add libstdc++ && rm -rf /var/cache/apk/*
+RUN cd $(dirname ${GRADLE_HOME}) && \
+    wget  https://services.gradle.org/distributions/gradle-${GRADLE_VERSION}-bin.zip && \
+    unzip gradle-${GRADLE_VERSION}-bin.zip && \
+    rm -f gradle-${GRADLE_VERSION}-bin.zip && \
+    ln -s gradle-${GRADLE_VERSION} gradle && \
+    echo -ne "- with Gradle ${GRADLE_VERSION}\n" >> /root/.built && \
+    apk add --update libstdc++ && \
+    echo -n ''
 # ^ gradle
+#    rm -rf /var/cache/apk/*
